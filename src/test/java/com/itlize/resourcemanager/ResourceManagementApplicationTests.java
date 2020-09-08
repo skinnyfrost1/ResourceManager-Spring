@@ -1,4 +1,4 @@
-package com.resource.demo;
+package com.itlize.resourcemanager;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
