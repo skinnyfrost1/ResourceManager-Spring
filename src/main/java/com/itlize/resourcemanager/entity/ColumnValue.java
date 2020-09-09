@@ -16,7 +16,7 @@ public class ColumnValue {
     String column_value;
 
     @ManyToOne(targetEntity = Columns.class)
-    Column column;
+    Columns column;
 
     @ManyToOne(targetEntity = Resource.class)
     Resource resource;
