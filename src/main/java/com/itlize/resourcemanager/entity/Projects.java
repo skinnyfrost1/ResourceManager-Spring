@@ -8,7 +8,6 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "projects")
 @Getter
 @Setter
 
@@ -22,10 +21,11 @@ public class Projects {
     @ManyToOne(targetEntity = Users.class)
     Users users;
 
-    @ManyToOne(targetEntity = Project_to_Resource.class)
-    Project_to_Resource pr;
 
-    @OneToMany(cascade =CascadeType.DETACH, targetEntity = Columns.class, fetch = FetchType.LAZY)
+    @OneToMany(cascade = CascadeType.REMOVE, mappedBy = "projects", targetEntity = Project_to_Resource.class, fetch = FetchType.LAZY)
+    List<Project_to_Resource> pr;
+
+    @OneToMany(cascade =CascadeType.DETACH, mappedBy = "projects", targetEntity = Columns.class, fetch = FetchType.LAZY)
     List<Columns> columns;
 
 

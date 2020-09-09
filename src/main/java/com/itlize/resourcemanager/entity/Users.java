@@ -8,12 +8,11 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "users")
 @Getter
 @Setter
 public class Users {
     @Id
-    int user_id;
+    Integer user_id;
 
     @Column(name = "first_name")
     String first_name;
@@ -30,7 +29,7 @@ public class Users {
     @Column(name = "roles")
     String roles;
 
-    @OneToMany(cascade =CascadeType.DETACH, targetEntity = Projects.class, fetch = FetchType.LAZY)
+    @OneToMany(cascade =CascadeType.DETACH,  mappedBy = "users", targetEntity = Projects.class, fetch = FetchType.LAZY)
     List<Projects> projects;
 
     public Users() {

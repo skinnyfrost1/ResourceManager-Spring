@@ -7,18 +7,17 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "projects")
 @Getter
 @Setter
 public class Project_to_Resource {
     @Id
     int id;
 
-    @OneToMany(targetEntity = Projects.class, cascade = CascadeType.DETACH, fetch = FetchType.LAZY)
-    List<Projects> projects;
+    @ManyToOne(targetEntity = Projects.class)
+    Projects projects;
 
-    @OneToMany(targetEntity = Resource.class, cascade = CascadeType.DETACH, fetch = FetchType.LAZY)
-    List<Resource> Resource;
+    @ManyToOne(targetEntity = Resource.class)
+    Resource resource;
 
     public Project_to_Resource() {}
 }
