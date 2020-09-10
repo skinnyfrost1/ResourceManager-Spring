@@ -6,10 +6,8 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "projects")
 @Getter
 @Setter
-
 public class ColumnValue {
     @Id
     int id;
@@ -17,8 +15,8 @@ public class ColumnValue {
     @Column
     String column_value;
 
-    @ManyToOne(targetEntity = Column.class)
-    Column column;
+    @ManyToOne(targetEntity = Columns.class)
+    Columns column;
 
     @ManyToOne(targetEntity = Resource.class)
     Resource resource;
