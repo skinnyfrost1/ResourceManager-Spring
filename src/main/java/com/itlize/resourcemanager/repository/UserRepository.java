@@ -1,12 +1,13 @@
 package com.itlize.resourcemanager.repository;
 
-import com.itlize.resourcemanager.entity.Users;
+import com.itlize.resourcemanager.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+
+import java.util.Optional;
 
 
-@RepositoryRestResource(path="userRepository")
+//@RepositoryRestResource(path="userRepository")
 
-public interface UserRepository extends JpaRepository<Users,Integer> {
+public interface UserRepository extends JpaRepository<User,Integer> {
+    Optional<User> findByUsername(String username);
 }

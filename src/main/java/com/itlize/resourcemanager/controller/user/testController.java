@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class testController {
     @GetMapping(value = "/")
     public ResponseEntity<?> getTest (){
+        System.out.println("adfasdf");
         return new ResponseEntity<String>("hello world", HttpStatus.ACCEPTED);
     }
 

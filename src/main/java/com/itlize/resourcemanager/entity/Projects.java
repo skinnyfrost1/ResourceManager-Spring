@@ -18,8 +18,8 @@ public class Projects {
     @Column(name = "project_name")
     String project_name;
 
-    @ManyToOne(targetEntity = Users.class)
-    Users users;
+    @ManyToOne(targetEntity = User.class)
+    User user;
 
 
     @OneToMany(cascade = CascadeType.REMOVE, mappedBy = "projects", targetEntity = Project_to_Resource.class, fetch = FetchType.LAZY)

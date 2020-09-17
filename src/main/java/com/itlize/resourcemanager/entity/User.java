@@ -10,7 +10,7 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-public class Users {
+public class User {
     @Id
     Integer user_id;
 
@@ -23,16 +23,22 @@ public class Users {
     @Column(name = "email")
     String email;
 
+    @Column(name = "username")
+    String username;
+
     @Column(name = "password")
     String password;
 
     @Column(name = "roles")
     String roles;
 
-    @OneToMany(cascade =CascadeType.DETACH,  mappedBy = "users", targetEntity = Projects.class, fetch = FetchType.LAZY)
+    @Column(name = "active")
+    boolean active;
+
+    @OneToMany(cascade =CascadeType.DETACH,  mappedBy = "user", targetEntity = Projects.class, fetch = FetchType.LAZY)
     List<Projects> projects;
 
-    public Users() {
+    public User() {
     }
 
 }
