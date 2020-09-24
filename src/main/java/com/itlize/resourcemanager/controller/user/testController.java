@@ -7,19 +7,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class testController {
-    @GetMapping(value = "/")
-    public ResponseEntity<?> getTest (){
-        System.out.println("adfasdf");
-        return new ResponseEntity<String>("hello world", HttpStatus.ACCEPTED);
-    }
-
-    @GetMapping (value = "/user")
-    public ResponseEntity<?> getUser (){
-        return new ResponseEntity<String>("hello User", HttpStatus.ACCEPTED);
-    }
-
-    @GetMapping (value = "/admin")
-    public ResponseEntity<?> getAdmin (){
-        return new ResponseEntity<String>("hello Admin", HttpStatus.ACCEPTED);
-    }
+//    @GetMapping(value = "/")
+//    public ResponseEntity<?> getTest (){
+//        System.out.println("adfasdf");
+//        return new ResponseEntity<String>("hello world", HttpStatus.ACCEPTED);
+//    }
+//
+//    @GetMapping (value = "/user")
+//    public ResponseEntity<?> getUser (){
+//        return new ResponseEntity<String>("hello User", HttpStatus.ACCEPTED);
+//    }
+//
+//    @GetMapping (value = "/admin")
+//    public ResponseEntity<?> getAdmin (){
+//        return new ResponseEntity<String>("hello Admin", HttpStatus.ACCEPTED);
+//    }
 }

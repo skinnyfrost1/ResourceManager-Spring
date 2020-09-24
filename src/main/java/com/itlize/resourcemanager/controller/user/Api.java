@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api")
 public class Api {
 
-    @GetMapping("/test")
-    String get() {
-        return "You can see me if you got token!";
-    }
+//    @GetMapping("/test")
+//    String get() {
+//        return "You can see me if you got token!";
+//    }
 
 }
