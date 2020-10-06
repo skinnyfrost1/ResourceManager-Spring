@@ -1,6 +1,7 @@
 package com.itlize.resourcemanager.entity;
 
 
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,6 +13,7 @@ import java.util.List;
 @Setter
 public class User {
     @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     Integer user_id;
 
     @Column(name = "first_name")
