@@ -32,7 +32,6 @@ public class signup {
             return ResponseEntity.badRequest().body( "username is exist.");
         }
         System.out.println("username is not exist");
-
         if (!requestBody.getPassword().equals(requestBody.getConfirmPassword())){
             return ResponseEntity.badRequest().body("password and confirm password not the same.\n"+requestBody.getPassword()+"\n"+requestBody.getConfirmPassword());
         }
