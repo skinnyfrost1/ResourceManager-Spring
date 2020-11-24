@@ -3,6 +3,7 @@ package com.itlize.resourcemanager.controller.user;
 import com.itlize.resourcemanager.entity.User;
 import com.itlize.resourcemanager.models.SignupRequest;
 import com.itlize.resourcemanager.repository.UserRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.Optional;
 
+@Slf4j
 @Controller
 public class signup {
     @Autowired
@@ -25,6 +27,8 @@ public class signup {
         Optional<User> user = userRepository.findByUsername(requestBody.getUsername());
         System.out.println(user.toString());
         if(user.isPresent()){
+            log.warn("username is exist");
+//            log.debug("username is " + user.toString());
             return ResponseEntity.badRequest().body( "username is exist.");
         }
         System.out.println("username is not exist");
@@ -43,6 +47,7 @@ public class signup {
         newUser.setRoles("ROLE_USER");
         newUser.setActive(true);
         userRepository.save(newUser);
+        log.info("log success");
         return ResponseEntity.ok("Success");
     }
 //    @PostMapping("/register")
