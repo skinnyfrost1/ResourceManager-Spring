@@ -24,10 +24,6 @@ public class MyUserDetails implements UserDetails {
         System.out.println("MyUserDetails constructor.");
         this.username = user.getUsername();
         this.password = user.getPassword();
-//        this.email = user.getEmail();
-//        this.first_name = user.getFirst_name();
-//        this.last_name = user.getLast_name();
-//        this.role = user.getRoles();
         this.active = user.isActive();
         this.authorities = Arrays.stream(user.getRoles().split(","))
                 .map(SimpleGrantedAuthority::new)

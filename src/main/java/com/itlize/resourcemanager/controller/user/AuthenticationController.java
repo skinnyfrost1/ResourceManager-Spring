@@ -30,9 +30,7 @@ public class AuthenticationController {
     @PostMapping("/authenticate")
     public ResponseEntity<?> postLogin (@RequestBody AuthenticationRequest authenticationRequest)throws Exception {
         try{
-            System.out.println(authenticationRequest.getUsername());
-            System.out.println(authenticationRequest.getPassword());
-            System.out.println("authenticaten\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+
 
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authenticationRequest.getUsername(), authenticationRequest.getPassword()));
         } catch(BadCredentialsException e){

@@ -8,7 +8,7 @@ import java.util.Optional;
 
 //@RepositoryRestResource(path="userRepository")
 
-public interface UserRepository extends JpaRepository<User,Integer> {
+public interface    UserRepository extends JpaRepository<User,Integer> {
     Optional<User> findByUsername(String username);
 
 }

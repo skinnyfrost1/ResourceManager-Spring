@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class testController {
+
     @GetMapping(value = "/")
     public ResponseEntity<?> getTest (){
         System.out.println("adfasdf");
